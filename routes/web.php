@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetailTutorialController;
+use App\Http\Controllers\FinishedController;
 use App\Http\Controllers\MasterTutorialController;
 use App\Http\Controllers\PresentationController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,10 @@ Route::middleware('auth.session')->group(function () {
 Route::prefix('presentation')->group(function () {
     Route::get('/{slug}', [PresentationController::class, 'show']);
     Route::get('/{slug}/poll', [PresentationController::class, 'poll']);
+});
+
+Route::prefix('finished')->group(function () {
+    Route::get('/{slug}', [FinishedController::class, 'show']);
 });
     
 Route::get('/login', [AuthController::class, 'index']);

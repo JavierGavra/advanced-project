@@ -57,14 +57,15 @@ class MasterTutorialController extends Controller
         $nama_matkul = $parts[1];
 
         $slug = Str::slug($request->judul);
-        $random = Str::random(16);
+        $pRandom = Str::random(16);
+        $fRandom = Str::random(16);
 
         MasterTutorial::create([
             'judul'            => $request['judul'],
             'nama_matkul'      => $nama_matkul,
             'kode_matkul'      => $kode_matkul,
-            'presentation_url' => "presentation/{$slug}-{$random}",
-            'finished_url'     => "finished/{$slug}-{$random}",
+            'presentation_url' => "presentation/{$slug}-{$pRandom}",
+            'finished_url'     => "finished/{$slug}-{$fRandom}",
             'creator_email'    => session('user_email'),
         ]);
 

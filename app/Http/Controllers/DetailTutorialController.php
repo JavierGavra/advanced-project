@@ -158,10 +158,6 @@ class DetailTutorialController extends Controller {
  
     // ─── PRIVATE HELPER ───────────────────────────────────────────────────────
 
-    /**
-     * Hapus file gambar lama dari storage (jika tipe berubah dari gambar).
-     * Mengembalikan null agar field gambar di-clear.
-     */
     private function deleteOldImage(DetailTutorial $detail, $fallback): ?string
     {
         if ($detail->type === 'gambar' && $detail->gambar) {

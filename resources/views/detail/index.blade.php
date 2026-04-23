@@ -5,6 +5,12 @@
     {{-- Header --}}
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
+            <a href="/master" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 mb-3 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Kembali ke Master Tutorial
+            </a>
             <h1 class="text-2xl font-bold text-white">{{ $master->judul }}</h1>
             <p class="text-sm text-slate-400 mt-0.5">
                 <span class="font-medium text-gray-600">Kode Matkul:</span> {{ $master->kode_matkul }}
@@ -189,6 +195,20 @@
         </div>
         @endif
 
+    </div>
+
+    {{-- ── Info URL ─────────────────────────────────────────────────────────── --}}
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="bg-gray-800/60 border border-[#285A48] rounded-lg px-4 py-3">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">URL Presentation</p>
+            <a href="/{{ $master->presentation_url }}" target="_blank"
+               class="text-indigo-600 text-sm hover:underline break-all">{{ $master->presentation_url }}</a>
+        </div>
+        <div class="bg-gray-800/60 border border-[#285A48] rounded-lg px-4 py-3">
+            <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">URL Finished (PDF)</p>
+            <a href="/{{ $master->finished_url }}" target="_blank"
+               class="text-indigo-600 text-sm hover:underline break-all">{{ $master->finished_url }}</a>
+        </div>
     </div>
 </div>
 @endsection

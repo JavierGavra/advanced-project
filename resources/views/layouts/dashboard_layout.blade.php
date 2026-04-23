@@ -9,10 +9,10 @@
     <title>JargonCourse</title>
 </head>
 <body class="bg-[#091413]">
-    @include('components.sidebar')
-    <div class="sm:ml-64">
+    @include('components.navbar')
+    <main class="p-6 lg:p-8">
         @yield('content')
-    </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 </body>
 </html>

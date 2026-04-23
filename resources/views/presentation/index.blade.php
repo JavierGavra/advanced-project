@@ -32,7 +32,7 @@
         <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
             <div class="min-w-0">
                 <h1 class="text-base font-bold text-white truncate">{{ $master->judul }}</h1>
-                <p class="text-xs text-gray-400 mt-0.5">{{ $master->kode_matkul }}</p>
+                <p class="text-xs text-gray-400 mt-0.5">{{ $master->kode_matkul }} - {{ $master->nama_matkul }}</p>
             </div>
 
             {{-- Live indicator --}}
